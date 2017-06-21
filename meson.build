@@ -1,4 +1,4 @@
-project('hotdoc-gnome-theme', 'c', version: '0.1')
+project('hotdoc-gnome-theme', 'c', version: '0.2')
 
 theme = subproject('hotdoc_bootstrap_theme',
   default_options: ['less_include_path=' +
@@ -7,7 +7,7 @@ theme = subproject('hotdoc_bootstrap_theme',
 
 dist = find_program('dist.py')
 
-run_target('dist', command : [dist,
+run_target('tar', command : [dist,
    theme.get_variable('theme_dir'),
    join_paths(meson.current_source_dir(),
      'hotdoc-gnome-theme-' + meson.project_version() + '.tar.xz')]
