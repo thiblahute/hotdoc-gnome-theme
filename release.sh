@@ -4,8 +4,6 @@ REPO=hotdoc-gnome-theme
 
 if [ -z ${1+x} ]; then echo "Need to pass new version as argument"; exit 1; else echo "Releasing $1"; fi
 
-
-
 version=$1
 meson_projline="project('$REPO', 'c', version: '$version')"
 
@@ -27,8 +25,6 @@ mkdir build/
 meson.py build/
 ninja -C build tar
 sha=`sha256sum $REPO-$1.tar.xz | cut -d ' ' -f 1`
-
-
 
 TXT="Update hotdoc-bootstrap-theme
 
